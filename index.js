@@ -25,7 +25,7 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 // Index route
 app.get('/', function (req, res) {
-	res.send('Hi!')
+  res.send('Hi!')
 })
 
 // for Facebook verification
@@ -90,18 +90,6 @@ function receivedMessage(event) {
   var messageAttachments = message.attachments;
 
   if (messageText) {
-    // If we receive a text message, check to see if it matches a keyword
-    // and send back the example. Otherwise, just echo the text we received.
-    /*switch (messageText) {
-      case 'generic':
-        sendGenericMessage(senderID);
-        break;
-      case 'Hola':
-          sendTextMessage(senderID, 'Hola , ¿Qué tal?');
-          break;
-      default:
-        sendGenericMessage(senderID);
-    }*/
     sendOptionsMessage(senderID);
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -122,10 +110,7 @@ function receivedPostback(event) {
         sendOptionsMessage(senderID);
         break;
       case 'VER_PAGOS_PENDIENTES':
-          //sendTextMessage(senderID , 'Pending bill : \n August : 12,99$');
           sendPayActionMessage(senderID);
-          //sendTextMessage(senderID , 'Mes de Agosto : 12,95€');
-          /*Pagar*/
         break;
       case 'VER_HISTORICO_PAGOS' : 
           sendTextMessage(senderID , 'Paid : May  : 10,89$ \n Paid : June : 11,29$ \n Paid : July : 12,59$');
@@ -135,7 +120,6 @@ function receivedPostback(event) {
     }
 
 }
-
 
 function sendOptionsMessage(recipientId) {
   var messageData = {
@@ -166,7 +150,6 @@ function sendOptionsMessage(recipientId) {
   callSendAPI(recipientId, messageData);
 
 }
-
 
 function sendPayActionMessage(recipientId) {
   var messageData = {
@@ -222,7 +205,6 @@ function sendPayActionMessage(recipientId) {
 
 }
 
-
 function sendTextMessage(recipientId, messageText) {
   var messageData = {
     recipient: {
@@ -251,6 +233,10 @@ function callSendAPI(recipientId , messageData) {
         messageId, recipientId);
     } else {
       console.error("Unable to send message.");
+      console.error(response);
+      console.error(error);
+      console.error(response.statusCode);
+      sendTextMessage('1512754418744813' , '😵 Sorry, this option only works on USA at the moment');
     }
   });  
 }
