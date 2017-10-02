@@ -1,0 +1,16 @@
+{
+  "name": "messengerbot",
+  "version": "1.0.0",
+  "description": "A Facebook messenger bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
+}
