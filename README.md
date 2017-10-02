@@ -11,6 +11,9 @@ You can diploy this app on Heroku and connect to facebook messenger by a webhook
 ####How works?
 
 Currently this bot shows the options: 
+See pending bills 
+Show history bills
+
 Integration with Paypal or Stripe for payment through Messenger is currently in beta and only available in the US.
 
 
