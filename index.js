@@ -122,10 +122,13 @@ function receivedPostback(event) {
         sendOptionsMessage(senderID);
         break;
       case 'VER_PAGOS_PENDIENTES':
-          sendTextMessage("Pagos pendientes");
+          //sendTextMessage(senderID , 'Pending bill : \n August : 12,99$');
+          sendPayActionMessage(senderID);
+          //sendTextMessage(senderID , 'Mes de Agosto : 12,95€');
+          /*Pagar*/
         break;
       case 'VER_HISTORICO_PAGOS' : 
-          sendTextMessage(senderID , 'Historico');
+          sendTextMessage(senderID , 'Paid : May  : 10,89$ \n Paid : June : 11,29$ \n Paid : July : 12,59$');
           break;
       default:
         sendTextMessage(senderID, payload);
@@ -163,6 +166,62 @@ function sendOptionsMessage(recipientId) {
   callSendAPI(recipientId, messageData);
 
 }
+
+
+function sendPayActionMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'generic',
+          elements :[
+           {
+              title: "rift",
+              subtitle: "Next-generation virtual reality",
+              image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+              buttons: [{
+                type:'payment',
+                title:'buy',
+                payload:'PAGAR_CAFE',
+                payment_summary:{
+                    currency:'USD',
+                    payment_type:'FIXED_AMOUNT',
+                    is_test_payment : true, 
+                    merchant_name:'Peters Apparel',
+                    requested_user_info:[
+                      'shipping_address',
+                      'contact_name',
+                      'contact_phone',
+                      'contact_email'
+                    ],
+                    price_list:[
+                      {
+                        label:'Subtotal',
+                        amount:'29.99'
+                      },
+                      {
+                        label:'Taxes',
+                        amount:'2.47'
+                      }
+                    ]
+                  }
+            }]
+          }
+          ]
+        }
+      }
+    }
+  };  
+
+
+  callSendAPI(recipientId, messageData);
+
+}
+
 
 function sendTextMessage(recipientId, messageText) {
   var messageData = {
