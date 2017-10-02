@@ -118,6 +118,9 @@ function receivedPostback(event) {
 
   console.log("Postback : "+payload);
   switch (payload) {
+      case 'GET_STARTED_PAYLOAD':
+        sendOptionsMessage(senderID);
+        break;
       case 'VER_PAGOS_PENDIENTES':
           sendTextMessage("Pagos pendientes");
         break;
@@ -127,6 +130,37 @@ function receivedPostback(event) {
       default:
         sendTextMessage(senderID, payload);
     }
+
+}
+
+
+function sendOptionsMessage(recipientId) {
+  var messageData = {
+    recipient : {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'button',
+          text:'What would you like to do?',
+          buttons: [{
+            type:'postback',
+            title:'See pending bills',
+            payload:'VER_PAGOS_PENDIENTES'
+          },
+          {
+            type:'postback',
+            title:'Show me history',
+            payload:'VER_HISTORICO_PAGOS'
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(recipientId, messageData);
 
 }
 
