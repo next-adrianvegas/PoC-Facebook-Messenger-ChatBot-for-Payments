@@ -90,8 +90,10 @@ function receivedMessage(event) {
   var messageAttachments = message.attachments;
 
   if (messageText) {
+    console.log("MessageText : "+messageText);
     sendOptionsMessage(senderID);
   } else if (messageAttachments) {
+    console.log("MessageAttachments : "+messageAttachments);
     sendTextMessage(senderID, "Message with attachment received");
   }
 }
@@ -107,7 +109,9 @@ function receivedPostback(event) {
   console.log("Postback : "+payload);
   switch (payload) {
       case 'GET_STARTED_PAYLOAD':
-        sendOptionsMessage(senderID);
+        //sendOptionsMessage(senderID);
+        console.log("GET_STARTED_PAYLOAD");
+        sendTextMessage(senderID , 'Paid : May  : 10,89$ \n Paid : June : 11,29$ \n Paid : July : 12,59$');
         break;
       case 'VER_PAGOS_PENDIENTES':
           //sendPayActionMessage(senderID);
