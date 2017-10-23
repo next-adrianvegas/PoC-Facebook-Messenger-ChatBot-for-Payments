@@ -226,11 +226,7 @@ function sendGenericMessage(recipientId, messageText) {
               type: "web_url",
               url: "https://www.amazon.es/Nescaf%C3%A9-Dolce-Gusto-Espresso-Paquetes/dp/B0018CZK4K/ref=sr_1_3?ie=UTF8&qid=1508767248&sr=8-3&keywords=dolce+gusto",
               title: "Choose",
-              webview_height_ratio : "compact"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
+              webview_height_ratio : "tall"
             }],
           }, {
             title: "Cafe Au Lait",
@@ -241,10 +237,7 @@ function sendGenericMessage(recipientId, messageText) {
               type: "web_url",
               url: "https://www.amazon.co.uk/NESCAF%C3%89-Dolce-Gusto-Capsules-servings/dp/B007PRVELU/ref=sr_1_1_a_it?ie=UTF8&qid=1508767370&sr=8-1&keywords=dolce+gusto",
               title: "Choose"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for second bubble",
+              webview_height_ratio : "tall"
             }]
           }]
         }
