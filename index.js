@@ -236,7 +236,18 @@ function sendGenericMessage(recipientId, messageText) {
             buttons: [{
               type: "web_url",
               url: "https://www.amazon.co.uk/NESCAF%C3%89-Dolce-Gusto-Capsules-servings/dp/B007PRVELU/ref=sr_1_1_a_it?ie=UTF8&qid=1508767370&sr=8-1&keywords=dolce+gusto",
-              title: "Choose"
+              title: "Buy"
+              webview_height_ratio : "tall"
+            }]
+          }, {
+            title: "Cappuccino",
+            subtitle: "Nescafé Dolce Gusto - Cappuccino",
+            item_url: "https://www.amazon.es/Nescaf%C3%A9-Dolce-Gusto-Cappuccino-Paquetes/dp/B01M0B3H16/ref=sr_1_7?ie=UTF8&qid=1508767248&sr=8-7&keywords=dolce+gusto",               
+            image_url: "https://images-na.ssl-images-amazon.com/images/I/91Y1e3E9VfL._SL1500_.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "https://www.amazon.es/Nescaf%C3%A9-Dolce-Gusto-Cappuccino-Paquetes/dp/B01M0B3H16/ref=sr_1_7?ie=UTF8&qid=1508767248&sr=8-7&keywords=dolce+gusto",
+              title: "Buy"
               webview_height_ratio : "tall"
             }]
           }]
