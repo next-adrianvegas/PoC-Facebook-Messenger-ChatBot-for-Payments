@@ -248,7 +248,7 @@ function sendGenericMessage(recipientId, messageText) {
     }
   };  
 
-  callSendAPI(messageData);
+  callSendAPI(recipientId, messageData);
 
 }
 
