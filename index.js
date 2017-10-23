@@ -110,8 +110,8 @@ function receivedPostback(event) {
   switch (payload) {
       case 'GET_STARTED_PAYLOAD':
         //sendOptionsMessage(senderID);
-        console.log("GET_STARTED_PAYLOAD");
-        sendTextMessage(senderID , 'Paid : May  : 10,89$ \n Paid : June : 11,29$ \n Paid : July : 12,59$');
+        sendTextMessage(senderID , 'Hi! welcome to Coffe shoper bot 🤖☕ \n What coffe do you want order today?');
+        sendGenericMessage(senderID);
         break;
       case 'VER_PAGOS_PENDIENTES':
           //sendPayActionMessage(senderID);
@@ -218,14 +218,14 @@ function sendGenericMessage(recipientId, messageText) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            title: "Espresso Intenso",
+            subtitle: "Nescafé Dolce Gusto - Espresso Intenso",
+            item_url: "https://www.amazon.es/Nescaf%C3%A9-Dolce-Gusto-Espresso-Paquetes/dp/B0018CZK4K/ref=sr_1_3?ie=UTF8&qid=1508767248&sr=8-3&keywords=dolce+gusto",               
+            image_url: "https://images-na.ssl-images-amazon.com/images/I/51JvfVasIbL.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL",
+              url: "https://www.amazon.es/Nescaf%C3%A9-Dolce-Gusto-Espresso-Paquetes/dp/B0018CZK4K/ref=sr_1_3?ie=UTF8&qid=1508767248&sr=8-3&keywords=dolce+gusto",
+              title: "Choose",
               webview_height_ratio : "compact"
             }, {
               type: "postback",
@@ -233,14 +233,14 @@ function sendGenericMessage(recipientId, messageText) {
               payload: "Payload for first bubble",
             }],
           }, {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+            title: "Cafe Au Lait",
+            subtitle: "NESCAFÉ Dolce Gusto Cafe Au Lait",
+            item_url: "https://www.amazon.co.uk/NESCAF%C3%89-Dolce-Gusto-Capsules-servings/dp/B007PRVELU/ref=sr_1_1_a_it?ie=UTF8&qid=1508767370&sr=8-1&keywords=dolce+gusto",               
+            image_url: "https://images-na.ssl-images-amazon.com/images/I/81iySADZQGL._SL1500_.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
+              url: "https://www.amazon.co.uk/NESCAF%C3%89-Dolce-Gusto-Capsules-servings/dp/B007PRVELU/ref=sr_1_1_a_it?ie=UTF8&qid=1508767370&sr=8-1&keywords=dolce+gusto",
+              title: "Choose"
             }, {
               type: "postback",
               title: "Call Postback",
