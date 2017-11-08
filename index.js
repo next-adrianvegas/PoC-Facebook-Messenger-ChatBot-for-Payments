@@ -113,12 +113,12 @@ function receivedPostback(event) {
         sendTextMessage(senderID , 'Hi! welcome to Coffe shoper bot 🤖☕ \n What coffe do you want order today?');
         sendGenericMessage(senderID);
         break;
-      case 'VER_PAGOS_PENDIENTES':
+      case 'VER_CAFE_EN_VENTA':
           //sendPayActionMessage(senderID);
           sendGenericMessage(senderID);
         break;
       case 'VER_HISTORICO_PAGOS' : 
-          sendTextMessage(senderID , 'Paid : May  : 10,89$ \n Paid : June : 11,29$ \n Paid : July : 12,59$');
+          sendTextMessage(senderID , 'May : Espresso Intenso  : 10,89$ \n June : Espresso Intenso : 11,29$ \n July : Cappuccino : 12,59$');
           break;
       default:
         sendTextMessage(senderID, payload);
@@ -139,8 +139,8 @@ function sendOptionsMessage(recipientId) {
           text:'What would you like to do?',
           buttons: [{
             type:'postback',
-            title:'See pending bills',
-            payload:'VER_PAGOS_PENDIENTES'
+            title:'Buy coffe',
+            payload:'VER_CAFE_EN_VENTA'
           },
           {
             type:'postback',
