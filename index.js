@@ -110,7 +110,7 @@ function receivedPostback(event) {
   switch (payload) {
       case 'GET_STARTED_PAYLOAD':
         
-        sendTextMessage(senderID , 'Hi! welcome to Coffe shoper bot 🤖☕ \n What coffe do you want order today?');
+        sendTextMessage(senderID , 'Welcome to Coffe Shopper Bot 🤖☕ ');
         sendOptionsMessage(senderID);
         //sendGenericMessage(senderID);
         break;
