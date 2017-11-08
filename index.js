@@ -109,9 +109,10 @@ function receivedPostback(event) {
   console.log("Postback : "+payload);
   switch (payload) {
       case 'GET_STARTED_PAYLOAD':
-        //sendOptionsMessage(senderID);
+        
         sendTextMessage(senderID , 'Hi! welcome to Coffe shoper bot 🤖☕ \n What coffe do you want order today?');
-        sendGenericMessage(senderID);
+        sendOptionsMessage(senderID);
+        //sendGenericMessage(senderID);
         break;
       case 'VER_CAFE_EN_VENTA':
           //sendPayActionMessage(senderID);
