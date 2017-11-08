@@ -18,6 +18,7 @@ Show history : Show a (mock) user payment history .
 
 (Integration with Paypal or Stripe for payment through Buy button of Facebook Messenger is currently in beta and only available in the US)
 
-
+[DEMO][2]
 
 [1]: https://developers.facebook.com/docs/messenger-platform/getting-started
+[2]: https://www.youtube.com/watch?v=TK0IXBvVqhw&feature=em-upload_owner
