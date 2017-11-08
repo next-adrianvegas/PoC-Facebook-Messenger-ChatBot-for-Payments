@@ -13,6 +13,7 @@ You can deploy this app on Heroku and connect to facebook messenger by a webhook
 Currently this bot shows the options: 
 
 Buy coffe : Show a web view of amazon to buy coffe .
+
 Show history : Show a (mock) user payment history .
 
 (Integration with Paypal or Stripe for payment through Buy button of Facebook Messenger is currently in beta and only available in the US)
